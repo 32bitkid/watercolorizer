@@ -27,11 +27,11 @@ describe('zipper', () => {
     expect(result).toStrictEqual(expected);
   });
 
-  it('should ignore any values beyond the end of the first array', () => {
+  it('should emit until all values have been exhaused', () => {
     const data = [1, 2, 3, 4];
     const other = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
     const result = Array.from(zipper<string | number>(data, other));
-    const expected = [1, 'a', 2, 'b', 3, 'c', 4];
+    const expected = [1, 'a', 2, 'b', 3, 'c', 4, 'd', 'e', 'f', 'g', 'h'];
     expect(result).toStrictEqual(expected);
   });
 

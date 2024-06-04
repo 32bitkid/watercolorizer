@@ -1,11 +1,11 @@
-export function* zipper<T>(zip: T[], ...other: T[][]) {
-  const length = zip.length;
+export function* zipper<T>(...sources: T[][]) {
+  const length = sources.reduce(
+    (prev, { length }) => (length > prev ? length : prev),
+    0,
+  );
 
-  const sources = [zip, ...other];
-  for (let i = 0; i < length - 1; i++)
+  for (let i = 0; i < length; i++)
     for (let s = 0; s < sources.length; s++) {
       if (i < sources[s].length) yield sources[s][i];
     }
-
-  yield zip[length - 1];
 }

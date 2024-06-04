@@ -1,0 +1,36 @@
+{
+  "name": "@watercolorizer/watercolorizer",
+  "version": "0.0.0",
+  "description": "Core watercolor polygon distortion library",
+  "keywords": [
+    "watercolor",
+    "canvas",
+    "svg",
+    "generative-art"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/32bitkid/watercolorizer/tree/main/libs/watercolorizer#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/32bitkid/watercolorizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/32bitkid/watercolorizer/issues?q=is%3Aopen+is%3Aissue+label%3A%watercolorizer%2Fwatercolorizer"
+  },
+  "files": [
+    "./dist/**/*"
+  ],
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "clean:wipe": "rimraf ./dist",
+    "build": "tsc --build"
+  },
+  "author": "J. Holmes <j@holmes.codes>",
+  "license": "ISC",
+  "dependencies": {
+    "@4bitlabs/vec2": "^1.1.0",
+    "@watercolorizer/convolution": "^1.0.0",
+    "simplify-ts": "^1.0.2"
+  }
+}

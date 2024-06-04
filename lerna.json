@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "independent",
+  "changelog": true,
+  "changelogPreset": "conventional-changelog-eslint",
+  "ignoreChanges": ["**/*.md"],
+  "command": {
+    "version": {
+      "conventionalCommits": true
+    }
+  }
+}

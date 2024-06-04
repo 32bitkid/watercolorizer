@@ -10,7 +10,7 @@
   "homepage": "https://github.com/32bitkid/watercolorizer/tree/main/libs/convolution#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/32bitkid/watercolorizer.git"
+    "url": "git+https://github.com/32bitkid/watercolorizer.git"
   },
   "bugs": {
     "url": "https://github.com/32bitkid/watercolorizer/issues?q=is%3Aopen+is%3Aissue+label%3A%watercolorizer%2Fconvolution"

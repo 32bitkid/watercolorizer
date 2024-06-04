@@ -24,7 +24,10 @@ export const simplifyWithWeights = (
   const cache = new WeakMap<Vec2, number>(
     points.map((vec, idx) => [vec, weights[idx]]),
   );
-  const nextPoints = simplify(points, tolerance);
+
+  const loop = [...points, points[0]]; // close the loop
+  const simplified = simplify(loop, tolerance);
+  const nextPoints = simplified.slice(0, -1); // open the loop
 
   // Rebuild weights on reduced set
   const nextWeights = nextPoints.map((it) => cache.get(it) ?? fallback());

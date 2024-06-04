@@ -53,16 +53,15 @@ export function* watercolorize(
   if (preEvolutions > 0 && simplifyAfterPreEvolution)
     prev = simplifyWithWeights(prev, simplifyAfterPreEvolution);
 
-  // prev = preEvolutions > 0 ? simplify(prev, 4) : prev;
-
   for (let e = 0; e < evolutions; e++) {
     for (let l = 0; l < layersPerEvolution; l++) {
-      const layer = nReduce<PointsAndWeights>(
+      const [layerPoints] = nReduce<PointsAndWeights>(
         layerEvolutions,
         distort,
         distort(prev),
       );
-      yield simplify(layer[0], 0.5);
+
+      yield simplify([...layerPoints, layerPoints[0]], 0.5).slice(0, -1);
     }
     prev = distort(prev);
     if (simplifyEachEvolution)

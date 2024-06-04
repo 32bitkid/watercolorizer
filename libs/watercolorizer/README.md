@@ -1,11 +1,11 @@
-# @watercolorize/watercolorizer [![License][license]][npm] [![NPM Version][version]][npm] [![NPM Downloads][dl]][npm]
+# @watercolorizer/watercolorizer [![License][license]][npm] [![NPM Version][version]][npm] [![NPM Downloads][dl]][npm]
 
 ![watercolorizer logo](https://j.holmes.codes/images/watercolorizer/watercolorizer.png)
 
-[npm]: https://www.npmjs.com/package/@watercolorize/watercolorize3
-[version]: https://img.shields.io/npm/v/%40watercolorize%2Fwatercolorize3
-[license]: https://img.shields.io/npm/l/%40watercolorize%2Fwatercolorize3
-[dl]: https://img.shields.io/npm/dy/%40watercolorize%2Fwatercolorize3
+[npm]: https://www.npmjs.com/package/@watercolorizer/watercolorizer
+[version]: https://img.shields.io/npm/v/%40watercolorizer%2Fwatercolorizer
+[license]: https://img.shields.io/npm/l/%40watercolorizer%2Fwatercolorizer
+[dl]: https://img.shields.io/npm/dy/%40watercolorizer%2Fwatercolorizer
 
 **Watercolorizer** is a small graphics library for creating generative watercolor-like shapes from
 simple polygonal base shapes.

@@ -43,13 +43,16 @@ console.log(output);
 
 ## Kernels
 
-Builtin Kernels:
+Built-in Kernels:
 
 - `K_BOX_BLUR_3` - 3-element 1D box blur
 - `K_GAUSS_BLUR_3` - 3-element 1D gaussian-approximation blur
-- `K_GAUSS_BLUR_5` - 3-element 1D gaussian-approximation blur
-- `K_GAUSS_BLUR_7` - 3-element 1D gaussian-approximation blur
-- `K_GAUSS_BLUR_3x3` - 3&times;5-element 2D gaussian-approximation blur
+- `K_GAUSS_BLUR_5` - 5-element 1D gaussian-approximation blur
+- `K_GAUSS_BLUR_7` - 7-element 1D gaussian-approximation blur
+
+
+- `K_BOX_BLUR_3x3` - 3&times;3-element 2D box blur
+- `K_GAUSS_BLUR_3x3` - 3&times;3-element 2D gaussian-approximation blur
 - `K_GAUSS_BLUR_5x5` - 5&times;5-element 2D gaussian-approximation blur
 - `K_GAUSS_BLUR_7x7` - 7&times;7-element 2D gaussian-approximation blur
 

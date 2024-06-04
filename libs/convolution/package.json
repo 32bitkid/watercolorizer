@@ -1,6 +1,6 @@
 {
   "name": "@watercolorizer/convolution",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Simple, unoptimized 1D and 2D convolution functions for typed-arrays",
   "keywords": [
     "convolution"

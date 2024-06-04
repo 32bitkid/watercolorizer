@@ -1,11 +1,14 @@
-# @watercolorize/watercolorize3 [![License][license]][npm] [![NPM Version][version]][npm] [![NPM Downloads][dl]][npm]
+# @watercolorize/watercolorizer [![License][license]][npm] [![NPM Version][version]][npm] [![NPM Downloads][dl]][npm]
+
+![watercolorizer logo](https://j.holmes.codes/images/watercolorizer/watercolorizer.png)
 
 [npm]: https://www.npmjs.com/package/@watercolorize/watercolorize3
 [version]: https://img.shields.io/npm/v/%40watercolorize%2Fwatercolorize3
 [license]: https://img.shields.io/npm/l/%40watercolorize%2Fwatercolorize3
 [dl]: https://img.shields.io/npm/dy/%40watercolorize%2Fwatercolorize3
 
-Simple, unoptimized 1D and 2D watercolorize3 functions for typed-arrays.
+**Watercolorizer** is a small graphics library for creating generative watercolor-like shapes from
+simple polygonal base shapes.
 
 ## Getting Started
 
@@ -58,3 +61,19 @@ for (const layer of watercolorize(poly)) {
   /* drawLayer */
 }
 ```
+
+## Examples
+
+Sketches created with **watercolorizer** and **rough.js**
+
+![watercolorizer logo](https://j.holmes.codes/images/watercolorizer/example-colonels-bequest.jpg)
+![watercolorizer logo](https://j.holmes.codes/images/watercolorizer/example-codename-iceman.jpg)
+![watercolorizer logo](https://j.holmes.codes/images/watercolorizer/example-roger-wilco.jpg)
+
+## Inspiration & Credits
+
+- [Tyler Hobbs](https://www.tylerxhobbs.com/) talk at [Strange Loop Conference 2017](https://www.youtube.com/watch?v=5R9eywArFTE). Most of the core algorithms are implemented using this talk as a basis for the interface.
+- Also see the associated blog: [How to Hack a Painting](https://www.tylerxhobbs.com/words/how-to-hack-a-painting) by [Tyler Hobbs](https://www.tylerxhobbs.com/), though the actual talk is perhaps more _illuminating_ at least for me.
+- The original *need* for this library was being inspired by artwork of [Douglas Herring](http://www.douglasherring.com/)
+  in the release of [The Colonel's Bequest](https://en.wikipedia.org/wiki/The_Colonel%27s_Bequest) and wanting to create
+  generative-art based on those sources.

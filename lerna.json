@@ -3,9 +3,9 @@
   "version": "independent",
   "changelog": true,
   "changelogPreset": "conventional-changelog-eslint",
-  "ignoreChanges": ["**/*.md"],
   "command": {
     "version": {
+      "private": false,
       "conventionalCommits": true
     }
   }

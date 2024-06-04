@@ -4,3 +4,4 @@ coverage/
 tmp/
 .nvmrc
 .nx/cache
+./lerna-debug.log

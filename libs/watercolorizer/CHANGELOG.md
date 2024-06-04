@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/watercolorizer@1.0.2...@watercolorizer/watercolorizer@1.0.3) (2024-06-04)
+
+### Chore
+
+- Fix badge links ([be936b4](https://github.com/32bitkid/watercolorizer/commit/be936b46216873494ab448571be64933159b1a78))
+
 ## [1.0.2](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/watercolorizer@1.0.1...@watercolorizer/watercolorizer@1.0.2) (2024-06-04)
 
 ### Chore

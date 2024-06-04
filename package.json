@@ -10,7 +10,8 @@
     "clean:wipe": "lerna run clean:wipe"
   },
   "workspaces": [
-    "libs/*"
+    "libs/*",
+    "examples/basic-usage"
   ],
   "dependencies": {},
   "devDependencies": {

@@ -1,0 +1,29 @@
+{
+  "name": "@watercolorizer/convolution",
+  "version": "0.0.0",
+  "description": "Simple, unoptimized 1D and 2D convolution functions for typed-arrays",
+  "keywords": [
+    "convolution"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/32bitkid/watercolorizer/tree/main/libs/convolution#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/32bitkid/watercolorizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/32bitkid/watercolorizer/issues?q=is%3Aopen+is%3Aissue+label%3A%watercolorizer%2Fconvolution"
+  },
+  "files": [
+    "./dist/**/*"
+  ],
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "clean:wipe": "rimraf ./dist",
+    "build": "tsc --build",
+    "test": "jest src/"
+  },
+  "author": "J. Holmes <j@holmes.codes>",
+  "license": "ISC"
+}

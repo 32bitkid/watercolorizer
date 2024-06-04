@@ -7,8 +7,10 @@
 [license]: https://img.shields.io/npm/l/%40watercolorizer%2Fwatercolorizer
 [dl]: https://img.shields.io/npm/dy/%40watercolorizer%2Fwatercolorizer
 
-**Watercolorizer** is a small graphics library for creating generative watercolor-like shapes from
-simple polygonal base shapes.
+**Watercolorizer** is a _tiny_ graphics library for creating generative watercolor-like shapes from
+simple polygonal base-shapes. This _core_ library is un-opinionated about _how_ these paths get rendered,
+instead is just the generative algorithm for creating the paths _to_ render.
+
 
 ## Getting Started
 
@@ -24,7 +26,7 @@ function renderToCanvas(
     ctx.beginPath();
     ctx.moveTo(first[0], first[1]);
     rest.forEach(([x, y]) => ctx.lineTo(x, y));
-    ctx.clsoePath();
+    ctx.closePath();
     ctx.fillStyle = 'rgba(0 100 255 / 10%)';
     ctx.fill();
   }
@@ -46,9 +48,11 @@ renderToCanvas(ctx, polygon);
 - `layersPerEvolution` - Number of layers per evolutionary-step. Default: `3`
 - `layerEvolutions` - Number of evolutions applied to each layer. Default: `3`
 - `vertexWeights` - Scalar for each vertex in points which controls the magnitude of distortion per iteration. Default: `undefined`
-- `blurWeightsOnDistort` - Apply a 3-element gaussian blend on the derivied weights for distorted edges. Default: `false`
+- `blurWeightsOnDistort` - Apply a 3-element gaussian blend on the derived weights for distorted edges. Default: `false`
 - `simplifyAfterPreEvolution` - Apply polygonal simplification after the _pre-evolution_ phase. Default: `1`
 - `simplifyEachEvolution` - Apply polygonal simplification during each _evolutionary_ phase. Default: `false`
+
+For example:
 
 ```ts
 // Distort and subdivide the polygon 10 times and skip simplification
@@ -57,8 +61,8 @@ const options = {
   simplifyAfterPreEvolution: false,
 };
 
-for (const layer of watercolorize(poly)) {
-  /* drawLayer */
+for (const layer of watercolorize(poly, options)) {
+  drawLayer(layer); /* however you choose to render the layer */
 }
 ```
 

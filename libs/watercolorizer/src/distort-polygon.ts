@@ -13,7 +13,7 @@ import {
   K_GAUSS_BLUR_3,
 } from '@watercolorizer/convolution';
 import { segments } from './polygons-helpers';
-import { gaussRng } from './gauss-rng';
+import { GaussianRngFn, unsafeGaussRng } from './rng';
 import { lerp, clamp } from './maths';
 import { Points, PointsAndWeights, Weights } from './types';
 import { wigglePolygon } from './wiggle-polygon';
@@ -23,13 +23,18 @@ import { assertOK } from './assert-vec2-ok';
 export interface DistortPolyOptions {
   angleSD?: number;
   blurWeightsOnDistort?: boolean;
+  gaussRng?: GaussianRngFn;
 }
 
 export function distortPolygon(
   [points, weights]: PointsAndWeights,
   options: DistortPolyOptions = {},
 ): PointsAndWeights {
-  const { angleSD = Math.PI / 4, blurWeightsOnDistort = false } = options;
+  const {
+    angleSD = Math.PI / 4,
+    blurWeightsOnDistort = false,
+    gaussRng = unsafeGaussRng,
+  } = options;
 
   const midPoints: Points = [];
   const midWeights: Weights = [];
@@ -39,7 +44,7 @@ export function distortPolygon(
     const w0 = weights[i0] ?? 1;
     const w1 = weights[i1] ?? 1;
 
-    const mid = clamp(0.01, 0.99, gaussRng(0.5, 0.4 / 3));
+    const mid = clamp(0.001, 0.999, gaussRng(0.5, 0.4 / 3));
     const midPoint = vec2(lerp(a[0], b[0], mid), lerp(a[1], b[1], mid));
     const weight = lerp(w0, w1, mid);
 
@@ -63,7 +68,7 @@ export function distortPolygon(
   }
 
   const nextPoints = Array.from(
-    zipper(wigglePolygon(points, weights), midPoints),
+    zipper(wigglePolygon(points, weights, { gaussRng }), midPoints),
   );
 
   let nextWeights = Array.from(zipper(weights, midWeights));

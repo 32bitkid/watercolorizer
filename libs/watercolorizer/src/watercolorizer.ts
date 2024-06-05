@@ -4,6 +4,7 @@ import { Vec2 } from '@4bitlabs/vec2';
 import { distortPolygon, DistortPolyOptions } from './distort-polygon';
 import { PointsAndWeights } from './types';
 import { simplifyWithWeights } from './simplify-with-weights';
+import { RandomNumberGenerator, createGaussianRng } from './rng';
 
 const nReduce = <T>(
   length: number,
@@ -26,12 +27,13 @@ export interface WatercolorizeOptions {
   blurWeightsOnDistort?: boolean;
   simplifyAfterPreEvolution?: number | false;
   simplifyEachEvolution?: number | false;
+  random?: RandomNumberGenerator;
 }
 
 export function* watercolorize(
   points: Vec2[],
   options: WatercolorizeOptions = {},
-) {
+): Generator<Vec2[]> {
   const {
     preEvolutions = 0,
     evolutions = 5,
@@ -41,9 +43,16 @@ export function* watercolorize(
     blurWeightsOnDistort = false,
     simplifyAfterPreEvolution = 1,
     simplifyEachEvolution = false,
+    random = Math.random,
   } = options;
 
-  const distortPolyOptions: DistortPolyOptions = { blurWeightsOnDistort };
+  const gaussRng = createGaussianRng(random);
+
+  const distortPolyOptions: DistortPolyOptions = {
+    blurWeightsOnDistort,
+    gaussRng,
+  };
+
   const distort = (_: PointsAndWeights) =>
     distortPolygon(_, distortPolyOptions);
 

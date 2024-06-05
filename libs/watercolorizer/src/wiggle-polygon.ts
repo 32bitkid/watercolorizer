@@ -9,11 +9,21 @@ import {
 } from '@4bitlabs/vec2';
 
 import { triplets } from './polygons-helpers';
-import { gaussRng } from './gauss-rng';
 import { assertOK } from './assert-vec2-ok';
 import { Points, Weights } from './types';
+import { GaussianRngFn, unsafeGaussRng } from './rng';
 
-export function wigglePolygon(points: Points, weights: Weights): Points {
+interface WigglePolygonOptions {
+  gaussRng?: GaussianRngFn;
+}
+
+export function wigglePolygon(
+  points: Points,
+  weights: Weights,
+  options: WigglePolygonOptions = {},
+): Points {
+  const { gaussRng = unsafeGaussRng } = options;
+
   const next: Points = [];
   for (const [a, b, c, i] of triplets(points, true)) {
     const ab = vecSub(b, a);

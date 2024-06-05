@@ -11,7 +11,7 @@
   },
   "workspaces": [
     "libs/*",
-    "examples/basic-usage"
+    "examples"
   ],
   "dependencies": {},
   "devDependencies": {

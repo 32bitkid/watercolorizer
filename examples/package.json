@@ -1,5 +1,6 @@
 {
-  "name": "@watercolorizer/example-basic-usage",
+  "name": "@watercolorizer/examples",
+  "description": "Usage examples for @watercolorizer/watercolorizer",
   "private": true,
   "version": "0.0.0",
   "type": "module",

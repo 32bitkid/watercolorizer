@@ -41,7 +41,7 @@ export function* watercolorize(
     layerEvolutions = 3,
     vertexWeights = ones(points.length),
     blurWeightsOnDistort = false,
-    simplifyAfterPreEvolution = 1,
+    simplifyAfterPreEvolution = false,
     simplifyEachEvolution = false,
     random = Math.random,
   } = options;
@@ -70,7 +70,7 @@ export function* watercolorize(
         distort(prev),
       );
 
-      yield simplify([...layerPoints, layerPoints[0]], 0.5).slice(0, -1);
+      yield simplify([...layerPoints, layerPoints[0]], 1).slice(0, -1);
     }
     prev = distort(prev);
     if (simplifyEachEvolution)

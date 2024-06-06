@@ -1,9 +1,10 @@
+import { Vec2 } from '@4bitlabs/vec2';
+
 import {
   convolution1D as conv1d,
   K_GAUSS_BLUR_5,
 } from '@watercolorizer/convolution';
 
-import { Vec2 } from '@4bitlabs/vec2';
 
 const minmax = (list: number[]): [min: number, max: number] =>
   list.reduce<[number, number]>(

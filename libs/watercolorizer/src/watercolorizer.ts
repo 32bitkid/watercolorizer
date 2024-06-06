@@ -1,6 +1,6 @@
 import { SimplifyAP as simplify } from 'simplify-ts';
-
 import { Vec2 } from '@4bitlabs/vec2';
+
 import { distortPolygon, DistortPolyOptions } from './distort-polygon';
 import { PointsAndWeights } from './types';
 import { simplifyWithWeights } from './simplify-with-weights';

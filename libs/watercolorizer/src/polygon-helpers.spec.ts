@@ -1,4 +1,5 @@
 import { Vec2 } from '@4bitlabs/vec2';
+
 import { segments } from './polygons-helpers';
 
 describe('segments', () => {

@@ -1,6 +1,6 @@
 import { SimplifyAP as simplify } from 'simplify-ts';
-
 import { Vec2 } from '@4bitlabs/vec2';
+
 import { PointsAndWeights } from './types';
 
 export const warnOnce = <T>(message: string, defaultVal: T) => {

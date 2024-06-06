@@ -1,0 +1,32 @@
+{
+  "name": "@watercolorizer/visvalingam",
+  "version": "0.0.0",
+  "description": "Visvalingam’s line simplification algorithm",
+  "keywords": [
+    "visvalingam", "polyline", "simplification", "line"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/32bitkid/watercolorizer/tree/main/libs/visvalingam#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/32bitkid/watercolorizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/32bitkid/watercolorizer/issues?q=is%3Aopen+is%3Aissue+label%3A%watercolorizer%2Fvisvalingam"
+  },
+  "files": [
+    "./dist/**/*"
+  ],
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "clean:wipe": "rimraf ./dist",
+    "build": "tsc --build",
+    "test": "jest src/"
+  },
+  "author": "J. Holmes <j@holmes.codes>",
+  "license": "ISC",
+  "dependencies": {
+    "mnemonist": "^0.39.8"
+  }
+}

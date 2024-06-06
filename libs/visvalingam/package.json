@@ -1,9 +1,12 @@
 {
   "name": "@watercolorizer/visvalingam",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Visvalingam’s line simplification algorithm",
   "keywords": [
-    "visvalingam", "polyline", "simplification", "line"
+    "visvalingam",
+    "polyline",
+    "simplification",
+    "line"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

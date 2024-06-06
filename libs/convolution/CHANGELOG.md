@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@1.0.1...@watercolorizer/convolution@1.0.2) (2024-06-06)
+
+### Chore
+
+- adjusting linting and formatting. ([65dc5ac](https://github.com/32bitkid/watercolorizer/commit/65dc5ac782d531fe2f705c616501cfad6d2e7733))
+- Fix readme documentation on built-in kernels ([63e2720](https://github.com/32bitkid/watercolorizer/commit/63e2720170fc791b02c78b604fb0e9a0b2924a7f))
+
 ## [1.0.1](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@1.0.0...@watercolorizer/convolution@1.0.1) (2024-06-04)
 
 ### Chore

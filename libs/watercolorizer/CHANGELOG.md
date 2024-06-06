@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/watercolorizer@1.0.3...@watercolorizer/watercolorizer@1.0.4) (2024-06-06)
+
+### Added
+
+- Accept injectable random-number-generators. ([bfae1f9](https://github.com/32bitkid/watercolorizer/commit/bfae1f9edca33d237fa130b17f3d7fdd676ce750))
+
+### Changed
+
+- disable simplification by default. ([27b4cdf](https://github.com/32bitkid/watercolorizer/commit/27b4cdfc2cfd4e348992258933c6b8aaebc42e85))
+
+### Chore
+
+- adding some trivial unit-test verifications ([94071ee](https://github.com/32bitkid/watercolorizer/commit/94071eef32c6b7b48b7809f3e714de45102a18ef))
+- adjusting linting and formatting. ([65dc5ac](https://github.com/32bitkid/watercolorizer/commit/65dc5ac782d531fe2f705c616501cfad6d2e7733))
+
+### Fixed
+
+- Typo in README ([91b9a5e](https://github.com/32bitkid/watercolorizer/commit/91b9a5eca4c596bcfb22f96cca95f490a3ea1c47))
+
 ## [1.0.3](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/watercolorizer@1.0.2...@watercolorizer/watercolorizer@1.0.3) (2024-06-04)
 
 ### Chore

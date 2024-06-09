@@ -5,6 +5,14 @@
 **Watercolorizer** is a small graphics library for creating generative watercolor-like shapes from
 simple polygonal base shapes.
 
+
+## Packages
+
+- [`@watercolorizer/watercolorizer`](./libs/watercolorizer/README.md) - Core watercolor polygon distortion library.
+- [`@watercolorizer/convolution`](./libs/convolution/README.md) - Simple, unoptimized 1D and 2D convolution functions for typed-arrays.
+- [`@watercolorizer/tracer`](./libs/tracer/README.md) - Vector-tracer to convert 1-bit bitmap data to polygonal paths.
+- [`@watercolorizer/visvalingam`](./libs/visvalingam/README.md) - Visvalingam–Whyatt algorithm for line simplification.
+
 ## Examples
 
 Sketches created with **watercolorizer** and **rough.js**

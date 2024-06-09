@@ -5,7 +5,6 @@ import {
   K_GAUSS_BLUR_5,
 } from '@watercolorizer/convolution';
 
-
 const minmax = (list: number[]): [min: number, max: number] =>
   list.reduce<[number, number]>(
     ([min, max], i) => [Math.min(min, i), Math.max(max, i)],

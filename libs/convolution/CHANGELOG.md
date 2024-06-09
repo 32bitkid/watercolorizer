@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@1.0.2...@watercolorizer/convolution@1.0.3) (2024-06-09)
+
+### Fixed
+
+- Size constant for 7x7 guass kernel ([d12cfa7](https://github.com/32bitkid/watercolorizer/commit/d12cfa7e10ec5d23b9409c8253e52e6918ea7af5))
+
 ## [1.0.2](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@1.0.1...@watercolorizer/convolution@1.0.2) (2024-06-06)
 
 ### Chore

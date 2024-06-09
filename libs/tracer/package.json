@@ -1,6 +1,6 @@
 {
   "name": "@watercolorizer/tracer",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "1-bit bitmap polygon-tracer",
   "keywords": [
     "vectorization",

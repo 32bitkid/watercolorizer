@@ -5,7 +5,7 @@
 [license]: https://img.shields.io/npm/l/%40watercolorizer%2Ftracer
 [dl]: https://img.shields.io/npm/dy/%40watercolorizer%2Ftracer
 
-Efficiently create polygonal outlines of 1-bit bitmap images; where _zero_ is an "empty" pixel, and any _non-zero_ value is considered "filled".
+An extremely simple, but efficient, method to create polygonal outlines of 1-bit bitmap images; where _zero_ is an "empty" pixel, and any _non-zero_ value is considered "filled".
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ ctx.fill('evenodd');
 ## Options
 
 - `limit` - Limit the total number of loops returned. Default: `16`
-- `simplifyRuns` - Simplify multistep cardinal lines in the same direction. Default: `true`
+- `polygonify` - Simplify the pixel trace into a polygonal approximation. Default: `true`
 - `despeckle` - Remove loops that have a bounding box are smaller than this value. Default: `false`
 - `turnPolicy` - Which direct to turn when loop direction is ambigous, either `"ccw"` (counter-clockwise) or `"cw"` (clockwise) from the current direction. Default: `"ccw"`
 
@@ -57,5 +57,9 @@ const loops = trace(pixelData, bitmapSize, {
 
 ## Future work
 
-- Phase 2: Polygonal path simplification
+- Phase 2: Improved Polygonal path simplification.
 - Phase 3: Bezier appoximations
+
+## References & Sources
+
+- [Potrace whitepaper](https://potrace.sourceforge.net/potrace.pdf) 

@@ -12,9 +12,8 @@ export function invertPoly(data: Uint8ClampedArray, size: Vec2, ring: Ring) {
     const xPairs = xIntersects(ring, y + 0.5);
     for (let pair = 0; pair < xPairs.length; pair += 2) {
       const start = xPairs[pair];
-      const end = xPairs[pair + 1];
+      const end = Math.min(width, xPairs[pair + 1]);
       for (let x = start; x < end; x += 1) {
-        if (x >= width) continue;
         data[x + y * width] = data[x + y * width] === 0 ? 255 : 0;
       }
     }

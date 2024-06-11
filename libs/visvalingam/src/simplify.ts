@@ -18,15 +18,21 @@ interface Entry<T> {
 
 const weightCmp = <T>(a: Entry<T>, b: Entry<T>) => a.weight - b.weight;
 
+type LimitFn = (weight: number) => boolean;
+
 export function simplify<T extends object>(
   weightFn: WeightFn<T>,
   points: T[],
-  limit: number,
+  limit: number | LimitFn,
 ): T[] {
   const initialCount = points.length;
   if (initialCount < 3) return points;
-  if (initialCount < limit) return points;
-  if (limit < 3) return [points[0], points[initialCount - 1]];
+  if (typeof limit === 'number' && initialCount < limit) return points;
+  if (typeof limit === 'number' && limit < 3)
+    return [points[0], points[initialCount - 1]];
+
+  const countLimit = typeof limit === 'number' ? limit : 2;
+  const limitFn = typeof limit === 'number' ? null : limit;
 
   const heap: Entry<T>[] = [];
   const forward = new WeakMap<Entry<T>, Entry<T>>();
@@ -51,12 +57,15 @@ export function simplify<T extends object>(
   }
 
   // Cull
-  let pointsLeft = initialCount - limit;
+  let pointsLeft = initialCount - countLimit;
   const removed = new WeakSet<T>();
   while (pointsLeft > 0) {
     const current = pop(weightCmp, heap);
     if (!current) throw new Error('unexpected heap exhaustion');
     if (current.dead) continue;
+
+    if (!isFinite(current.weight)) break;
+    if (limitFn && !limitFn(current.weight)) break;
 
     removed.add(current.t[1]);
     pointsLeft -= 1;

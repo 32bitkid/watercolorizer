@@ -5,6 +5,8 @@
 [license]: https://img.shields.io/npm/l/%40watercolorizer%2Ftracer
 [dl]: https://img.shields.io/npm/dy/%40watercolorizer%2Ftracer
 
+![Tracer example](https://j.holmes.codes/images/watercolorizer/tracer-example.png)
+
 An extremely simple, but efficient, method to create polygonal outlines of 1-bit bitmap images; where _zero_ is an "empty" pixel, and any _non-zero_ value is considered "filled".
 
 ## Getting Started
@@ -14,10 +16,9 @@ import { trace } from '@watercolorizer/tracer';
 
 const bitmapSize: [width: number, height: number] = [100, 100];
 const pixelData = new Uint8ClampedArray(bitmapSize[0] * bitmapSize[1]);
+/* fill pixelData with 1bit data */
+
 const loops = trace(pixelData, bitmapSize);
-
-/* fill pixel data with data */
-
 loops.forEach(() => {
   /* render each loop */
 });
@@ -51,7 +52,7 @@ const bitmapSize: [width: number, height: number] = [100, 100];
 const pixelData = new Uint8ClampedArray(bitmapSize[0] * bitmapSize[1]);
 const loops = trace(pixelData, bitmapSize, {
   limit: 1, // stop after resolving a single loop
-  simplifyRuns: false, // do not simplify cardinal runs
+  polygonify: false, // do not polygonify
 });
 ```
 
@@ -62,4 +63,4 @@ const loops = trace(pixelData, bitmapSize, {
 
 ## References & Sources
 
-- [Potrace whitepaper](https://potrace.sourceforge.net/potrace.pdf) 
+- [Potrace whitepaper](https://potrace.sourceforge.net/potrace.pdf)

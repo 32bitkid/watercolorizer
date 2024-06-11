@@ -29,7 +29,8 @@ function possibleRunLength(steps: Direction[], start: number, max: number) {
 
 const SQRT1_2 = Math.SQRT1_2 ?? Math.sqrt(0.5);
 
-export function polygonify(ring: Ring, steps: Direction[]) {
+export function polygonify(ring$: Ring, steps: Direction[]) {
+  const ring = [...ring$, ring$[0]];
   if (ring.length < 3) return ring;
 
   const result: Vec2[] = [];
@@ -39,7 +40,7 @@ export function polygonify(ring: Ring, steps: Direction[]) {
     const max = possibleRunLength(steps, i, ring.length);
     const top = Math.min(ring.length, i + max);
 
-    let best: false | [k: number, dist: number, variance: number] = false;
+    let best: false | [score: number, k: number] = false;
     for (let k = top - 1; k >= i + 2; k--) {
       let isStraight = true;
 
@@ -60,17 +61,18 @@ export function polygonify(ring: Ring, steps: Direction[]) {
       }
 
       if (isStraight) {
-        const [, , prevV] = best || [0, Infinity, Infinity];
+        const [score] = best || [Infinity, 0];
         const avgVar = variance / (k - i);
         const dist = distanceBetween(iVec, kVec);
-        if (prevV >= avgVar) {
-          best = [k, dist, avgVar];
+        const nextScore = avgVar / dist;
+        if (score > nextScore) {
+          best = [nextScore, k];
         }
       }
     }
 
-    i = best ? best[0] : i + 1;
+    i = best ? best[1] : i + 1;
   }
 
-  return result;
+  return result.slice(0, -1);
 }

@@ -7,29 +7,12 @@
 [license]: https://img.shields.io/npm/l/%40watercolorizer%2Fwatercolorizer
 [dl]: https://img.shields.io/npm/dy/%40watercolorizer%2Fwatercolorizer
 
-**Watercolorizer** is a _tiny_ graphics library for creating generative watercolor-like shapes from
-simple polygonal base-shapes. This _core_ library is un-opinionated about _how_ these paths get rendered,
-instead is just the generative algorithm for creating the paths _to_ render.
+**Watercolorizer** is a _tiny_ graphics library for creating generative watercolor-like shapes from simple polygonal base-shapes. This _core_ library is un-opinionated about the rendering process and instead focuses on the generative algorithm for constructing the paths to be rendered.
 
 ## Getting Started
 
 ```ts
 import { watercolorize } from '@watercolorizer/watercolorizer';
-
-function renderToCanvas(
-  ctx: CanvasRenderingContext2D,
-  points: [number, number][],
-) {
-  for (const layer of watercolorize(poly)) {
-    const [first, ...rest] = layer;
-    ctx.beginPath();
-    ctx.moveTo(first[0], first[1]);
-    rest.forEach(([x, y]) => ctx.lineTo(x, y));
-    ctx.closePath();
-    ctx.fillStyle = 'rgba(0 100 255 / 10%)';
-    ctx.fill();
-  }
-}
 
 const polygon = [
   [20, 20],
@@ -37,7 +20,16 @@ const polygon = [
   [50, 50],
   [20, 50],
 ];
-renderToCanvas(ctx, polygon);
+
+for (const layer of watercolorize(poly)) {
+  const [first, ...rest] = layer;
+  ctx.beginPath();
+  ctx.moveTo(first[0], first[1]);
+  rest.forEach(([x, y]) => ctx.lineTo(x, y));
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(0 100 255 / 10%)';
+  ctx.fill();
+}
 ```
 
 ## Options

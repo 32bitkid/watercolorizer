@@ -1,21 +1,17 @@
-import { Vec2 } from '@4bitlabs/vec2';
+export type Segment<T> = [a: T, b: T, aIdx: number, bIdx: number];
 
-export function* segments<T extends Vec2>(
-  points: T[],
-  looped: boolean,
-): Generator<[T, T, number, number]> {
+export function* segments<T>(points: T[]): Generator<Segment<T>> {
   const length = points.length;
-  for (let i = 0; i < points.length - (looped ? 0 : 1); i++) {
+  for (let i = 0; i < points.length; i++) {
     const next = (i + 1) % length;
     yield [points[i], points[next], i, next];
   }
 }
 
-export function* triplets(
-  points: Vec2[],
-  looped: boolean,
-): IterableIterator<[Vec2, Vec2, Vec2, number]> {
-  for (let i = looped ? 0 : 1; i < points.length - (looped ? 0 : 1); i++) {
+export type Triplet<T> = [previous: T, self: T, next: T, idx: number];
+
+export function* triplets<T>(points: T[]): IterableIterator<Triplet<T>> {
+  for (let i = 0; i < points.length; i++) {
     const prev = (i - 1 + points.length) % points.length;
     const next = (i + 1) % points.length;
     yield [points[prev], points[i], points[next], i];

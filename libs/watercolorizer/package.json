@@ -10,6 +10,10 @@
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./distort-polygon": "./dist/distort-polygon.js"
+  },
   "homepage": "https://github.com/32bitkid/watercolorizer/tree/main/libs/watercolorizer#readme",
   "repository": {
     "type": "git",

@@ -25,7 +25,7 @@ export function wigglePolygon(
   const { gaussRng = unsafeGaussRng } = options;
 
   const next: Points = [];
-  for (const [a, b, c, i] of triplets(points, true)) {
+  for (const [a, b, c, i] of triplets(points)) {
     const ab = vecSub(b, a);
     const cb = vecSub(b, c);
     const dir = vecAdd(ab, cb);

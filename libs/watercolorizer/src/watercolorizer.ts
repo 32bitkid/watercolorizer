@@ -5,6 +5,7 @@ import { distortPolygon, DistortPolyOptions } from './distort-polygon';
 import { PointsAndWeights } from './types';
 import { simplifyWithWeights } from './simplify-with-weights';
 import { RandomNumberGenerator, createGaussianRng } from './rng';
+import { WindingOrder, windingOrderOf } from './winding-order';
 
 const nReduce = <T>(
   length: number,
@@ -28,6 +29,7 @@ export interface WatercolorizeOptions {
   simplifyAfterPreEvolution?: number | false;
   simplifyEachEvolution?: number | false;
   random?: RandomNumberGenerator;
+  windingOrder?: WindingOrder;
 }
 
 export function* watercolorize(
@@ -44,12 +46,13 @@ export function* watercolorize(
     simplifyAfterPreEvolution = false,
     simplifyEachEvolution = false,
     random = Math.random,
+    windingOrder = windingOrderOf(points),
   } = options;
 
   const gaussRng = createGaussianRng(random);
-
   const distortPolyOptions: DistortPolyOptions = {
     blurWeightsOnDistort,
+    windingOrder,
     gaussRng,
   };
 

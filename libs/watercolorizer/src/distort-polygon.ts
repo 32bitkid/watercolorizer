@@ -19,11 +19,17 @@ import { Points, PointsAndWeights, Weights } from './types';
 import { wigglePolygon } from './wiggle-polygon';
 import { zipper } from './zipper';
 import { assertOK } from './assert-vec2-ok';
+import { WindingOrder } from './winding-order';
 
 export interface DistortPolyOptions {
   angleSD?: number;
   blurWeightsOnDistort?: boolean;
   gaussRng?: GaussianRngFn;
+  midPointFn?: (len: number, weights: [w0: number, w1: number]) => number;
+  thetaFn?: (len: number, weight: number) => number;
+  magnitudeFn?: (len: number, weight: number) => number;
+  wiggle?: boolean;
+  windingOrder?: WindingOrder;
 }
 
 export function distortPolygon(
@@ -31,20 +37,29 @@ export function distortPolygon(
   options: DistortPolyOptions = {},
 ): PointsAndWeights {
   const {
-    angleSD = Math.PI / 4,
     blurWeightsOnDistort = false,
     gaussRng = unsafeGaussRng,
+    thetaFn = () => gaussRng(0, Math.PI / 12),
+    midPointFn = () => clamp(0.001, 0.999, gaussRng(0.5, 0.4 / 3)),
+    magnitudeFn = (len, weight) => {
+      const scale = gaussRng(0, len / 3);
+      const s2 = scale < 0 ? scale / 5 : scale;
+      return s2 * weight;
+    },
+    wiggle = true,
+    windingOrder = 'cw',
   } = options;
 
   const midPoints: Points = [];
   const midWeights: Weights = [];
 
-  for (const segment of segments(points, true)) {
+  for (const segment of segments(points)) {
     const [a, b, i0, i1] = segment;
     const w0 = weights[i0] ?? 1;
     const w1 = weights[i1] ?? 1;
 
-    const mid = clamp(0.001, 0.999, gaussRng(0.5, 0.4 / 3));
+    const len = distanceBetween(a, b);
+    const mid = midPointFn(len, [w0, w1]);
     const midPoint = vec2(lerp(a[0], b[0], mid), lerp(a[1], b[1], mid));
     const weight = lerp(w0, w1, mid);
 
@@ -52,24 +67,25 @@ export function distortPolygon(
     const tan = vec2();
     vecSub(b, a, tan);
     vecNorm(tan, tan);
-    const theta = gaussRng(Math.PI / 2, angleSD / 3);
+
+    const edgeTangent = windingOrder === 'cw' ? Math.PI / 2 : -Math.PI / 2;
+    const theta = edgeTangent + thetaFn(len, weight);
     vecRotate(tan, theta, tan);
 
     // Find dist
-    const len = distanceBetween(a, b);
-    const scale = gaussRng(0, len / 3);
-    const s2 = scale < 0 ? scale / 5 : scale;
-
-    vecScale(tan, s2 * weight, tan);
+    const magnitude = magnitudeFn(len, weight);
+    vecScale(tan, magnitude, tan);
     vecAdd(midPoint, tan, midPoint);
 
     midPoints.push(midPoint);
     midWeights.push(weight);
   }
 
-  const nextPoints = Array.from(
-    zipper(wigglePolygon(points, weights, { gaussRng }), midPoints),
-  );
+  const prevPoints = wiggle
+    ? wigglePolygon(points, weights, { gaussRng })
+    : points;
+
+  const nextPoints = Array.from(zipper(prevPoints, midPoints));
 
   let nextWeights = Array.from(zipper(weights, midWeights));
   if (blurWeightsOnDistort)

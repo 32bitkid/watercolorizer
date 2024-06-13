@@ -1,19 +1,12 @@
-import { Vec2, distanceBetween, add as vecAdd, project } from '@4bitlabs/vec2';
+import { Vec2, distanceBetween, project } from '@4bitlabs/vec2';
 
-import { Direction, UP, DOWN, LEFT, RIGHT } from './direction';
+import { Direction } from './direction';
 import { Ring } from './ring';
 
 function distanceToLine(p: Vec2, q: Vec2, a: Vec2): number {
   const proj = project(p, q, a);
   return distanceBetween(a, proj);
 }
-
-const pixelCenter: { [key in Direction]: Vec2 } = {
-  [DOWN]: [0.5, -0.5],
-  [UP]: [-0.5, 0.5],
-  [LEFT]: [-0.5, -0.5],
-  [RIGHT]: [0.5, 0.5],
-};
 
 function possibleRunLength(steps: Direction[], start: number, max: number) {
   let i = 0;

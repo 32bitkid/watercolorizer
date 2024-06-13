@@ -5,7 +5,6 @@
 **Watercolorizer** is a small graphics library for creating generative watercolor-like shapes from
 simple polygonal base shapes.
 
-
 ## Packages
 
 - [`@watercolorizer/watercolorizer`](./libs/watercolorizer/README.md) - Core watercolor polygon distortion library.

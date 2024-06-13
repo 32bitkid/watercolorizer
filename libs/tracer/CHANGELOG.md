@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/tracer@1.1.1...@watercolorizer/tracer@1.1.2) (2024-06-13)
+
+### Chore
+
+- cleanup unused code ([24f708c](https://github.com/32bitkid/watercolorizer/commit/24f708ce969fc3fce7c04f4ebc7706addffaf233))
+- fix polygonify test ([8cd9f93](https://github.com/32bitkid/watercolorizer/commit/8cd9f93a4193122de52694d5fdfad1a35ccc5462))
+
 ## [1.1.1](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/tracer@1.1.0...@watercolorizer/tracer@1.1.1) (2024-06-11)
 
 ### Fixed

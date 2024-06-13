@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/watercolorizer@1.0.5...@watercolorizer/watercolorizer@1.1.0) (2024-06-13)
+
+### Chore
+
+- Updated readme ([f6cb10d](https://github.com/32bitkid/watercolorizer/commit/f6cb10df2db6f1c06fd9359b5c59562aa044b322))
+
+### New
+
+- Expose underlying implementation of distortPolygon ([b0f1679](https://github.com/32bitkid/watercolorizer/commit/b0f1679977a09883ffa05e4a0bd97eccff12fcfe))
+
 ## [1.0.5](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/watercolorizer@1.0.4...@watercolorizer/watercolorizer@1.0.5) (2024-06-09)
 
 **Note:** Version bump only for package @watercolorizer/watercolorizer

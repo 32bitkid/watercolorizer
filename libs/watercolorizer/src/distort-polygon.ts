@@ -1,6 +1,7 @@
 import {
   add as vecAdd,
   distanceBetween,
+  lerp as vecLerp,
   normalize as vecNorm,
   rotate as vecRotate,
   scale as vecScale,
@@ -22,7 +23,6 @@ import { assertOK } from './assert-vec2-ok';
 import { WindingOrder } from './winding-order';
 
 export interface DistortPolyOptions {
-  angleSD?: number;
   blurWeightsOnDistort?: boolean;
   gaussRng?: GaussianRngFn;
   midPointFn?: (len: number, weights: [w0: number, w1: number]) => number;
@@ -60,7 +60,7 @@ export function distortPolygon(
 
     const len = distanceBetween(a, b);
     const mid = midPointFn(len, [w0, w1]);
-    const midPoint = vec2(lerp(a[0], b[0], mid), lerp(a[1], b[1], mid));
+    const midPoint = vecLerp(a, b, mid);
     const weight = lerp(w0, w1, mid);
 
     // Find tangent

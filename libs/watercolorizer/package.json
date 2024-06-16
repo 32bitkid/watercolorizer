@@ -33,7 +33,7 @@
   "author": "J. Holmes <j@holmes.codes>",
   "license": "ISC",
   "dependencies": {
-    "@4bitlabs/vec2": "^1.1.0",
+    "@4bitlabs/vec2": "^1.2.0",
     "@watercolorizer/convolution": "^1.0.3",
     "simplify-ts": "^1.0.2"
   }

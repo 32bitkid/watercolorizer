@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/watercolorizer@1.1.0...@watercolorizer/watercolorizer@1.1.1) (2024-06-16)
+
+### Fixed
+
+- Simplify vector lerp during midPoint construction ([5c3b29f](https://github.com/32bitkid/watercolorizer/commit/5c3b29fef419b7589c1b7f1364772b1c12c48897))
+
 # [1.1.0](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/watercolorizer@1.0.5...@watercolorizer/watercolorizer@1.1.0) (2024-06-13)
 
 ### Chore

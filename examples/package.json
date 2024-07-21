@@ -10,17 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@4bitlabs/color-space": "^1.2.2",
+    "@4bitlabs/color-space": "^1.2.3",
     "@4bitlabs/vec2": "^1.1.0",
     "@watercolorizer/convolution": "^1.0.1",
     "@watercolorizer/watercolorizer": "^1.0.0",
     "transformation-matrix": "^2.16.1",
-    "vue": "^3.4.21"
+    "vue": "^3.4.33"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vue-tsc": "^2.0.6"
+    "vite": "^5.3.4",
+    "vue-tsc": "^2.0.26"
   }
 }

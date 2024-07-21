@@ -28,7 +28,8 @@
   "scripts": {
     "clean": "tsc --build --clean",
     "clean:wipe": "rimraf ./dist",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "prepack": "npm run build"
   },
   "author": "J. Holmes <j@holmes.codes>",
   "license": "ISC",

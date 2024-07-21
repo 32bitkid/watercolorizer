@@ -22,7 +22,8 @@
     "clean": "tsc --build --clean",
     "clean:wipe": "rimraf ./dist",
     "build": "tsc --build",
-    "test": "jest src/"
+    "test": "jest src/",
+    "prepack": "npm run build"
   },
   "author": "J. Holmes <j@holmes.codes>",
   "license": "ISC"

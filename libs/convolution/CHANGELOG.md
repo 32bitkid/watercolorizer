@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@1.0.3...@watercolorizer/convolution@1.0.4) (2024-07-21)
+
+### Chore
+
+- ensure build before pack ([837b496](https://github.com/32bitkid/watercolorizer/commit/837b496a2b4f1b6d57d1a5c50b39cd5ad6a318e9))
+
 ## [1.0.3](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@1.0.2...@watercolorizer/convolution@1.0.3) (2024-06-09)
 
 ### Fixed

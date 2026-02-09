@@ -52,6 +52,7 @@ export function distortPolygon(
 
   const midPoints: Points = [];
   const midWeights: Weights = [];
+  const direction = windingOrder === 'cw' ? Math.PI / 2 : -Math.PI / 2;
 
   for (const segment of segments(points)) {
     const [a, b, i0, i1] = segment;
@@ -68,8 +69,7 @@ export function distortPolygon(
     vecSub(b, a, tan);
     vecNorm(tan, tan);
 
-    const edgeTangent = windingOrder === 'cw' ? Math.PI / 2 : -Math.PI / 2;
-    const theta = edgeTangent + thetaFn(len, weight);
+    const theta = direction + thetaFn(len, weight);
     vecRotate(tan, theta, tan);
 
     // Find dist

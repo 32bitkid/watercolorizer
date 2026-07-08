@@ -64,7 +64,7 @@ export function simplify<T extends object>(
     if (!current) throw new Error('unexpected heap exhaustion');
     if (current.dead) continue;
 
-    if (!isFinite(current.weight)) break;
+    if (!Number.isFinite(current.weight)) break;
     if (limitFn && !limitFn(current.weight)) break;
 
     removed.add(current.t[1]);

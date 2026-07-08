@@ -19,7 +19,7 @@ const warning = warnLater('bad maths!');
 
 export const assertOK = (it: Vec2[]) => {
   for (const [x, y] of it) {
-    if (isNaN(x) || isNaN(y)) warning();
+    if (Number.isNaN(x) || Number.isNaN(y)) warning();
   }
   return it;
 };

@@ -3,7 +3,7 @@ import { findFirstEdge } from './find-first-edge';
 import { invertPoly } from './invert-poly';
 import { polygonify } from './polygonify';
 import type { Ring } from './ring';
-import { walkEdge } from './walkEdge';
+import { walkEdge } from './walk-edge';
 
 interface TraceOptions {
   limit?: number;

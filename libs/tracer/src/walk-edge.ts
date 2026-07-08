@@ -1,4 +1,11 @@
-import { add, clone, isEqual, type Vec2, vec2 } from '@4bitlabs/vec2';
+import {
+  add,
+  clone,
+  isEqual,
+  type Vec2,
+  type MutableVec2,
+  vec2,
+} from '@4bitlabs/vec2';
 import { type Direction, DOWN, LEFT, RIGHT, UP } from './direction';
 import type { Ring } from './ring';
 
@@ -44,7 +51,7 @@ export function walkEdge(
   steps.push(dir);
   add(directionVectors[dir], cur, cur);
 
-  const bounds: Vec2 = [0, 1];
+  const bounds: MutableVec2 = [0, 1];
 
   while (!isEqual(start, cur)) {
     let nextDir: Direction = dir;

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue';
 import { vec2 } from '@4bitlabs/vec2';
-import * as M from 'transformation-matrix';
 import { watercolorize } from '@watercolorizer/watercolorizer';
+import * as M from 'transformation-matrix';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 import { mustExist } from './helpers/exists.ts';
-import { pathPoly } from './helpers/polygons.ts';
 import { gaussRng } from './helpers/gauss-rng.ts';
+import { colors, generateFillStyle } from './helpers/palette-helpers.ts';
+import { pathPoly } from './helpers/polygons.ts';
 import { randomWeights } from './helpers/random-weights.ts';
-import { generateFillStyle, colors } from './helpers/palette-helpers.ts';
 
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 const cancelRef = ref<number>(0);

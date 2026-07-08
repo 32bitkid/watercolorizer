@@ -1,4 +1,4 @@
-import { Vec2 } from '@4bitlabs/vec2';
+import type { Vec2 } from '@4bitlabs/vec2';
 
 export const getBounds = (poly: Vec2[]): [...Vec2, ...Vec2] =>
   poly.reduce(

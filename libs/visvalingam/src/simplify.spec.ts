@@ -1,4 +1,4 @@
-import { simplify, Triplet } from './simplify';
+import { simplify, type Triplet } from './simplify';
 import { areaOfTuple as areaOf } from './weight-functions';
 
 type PointTuple = [number, number];

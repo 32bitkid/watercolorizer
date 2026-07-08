@@ -1,6 +1,6 @@
-import { Ring } from './ring';
+import type { Direction } from './direction';
 import { polygonify } from './polygonify';
-import { Direction } from './direction';
+import type { Ring } from './ring';
 
 describe('polygonify', () => {
   it('should simplify', () => {

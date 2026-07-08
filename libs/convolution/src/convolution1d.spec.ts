@@ -1,4 +1,4 @@
-import { convolution1D, Kernel1D } from './convolution1d';
+import { convolution1D, type Kernel1D } from './convolution1d';
 
 describe('1d convoultion', () => {
   describe('edge handling', () => {

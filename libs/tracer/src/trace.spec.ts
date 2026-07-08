@@ -1,5 +1,5 @@
+import type { Ring } from './ring';
 import { trace } from './trace';
-import { Ring } from './ring';
 
 describe('trace', () => {
   it('should trace a polygon with a hole in it', () => {

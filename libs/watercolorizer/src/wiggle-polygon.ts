@@ -1,17 +1,16 @@
 import {
-  add as vecAdd,
   isEqual,
+  add as vecAdd,
   length as vecLen,
   normalize as vecNorm,
   rotate as vecRotate,
   scale as vecScale,
   sub as vecSub,
 } from '@4bitlabs/vec2';
-
-import { triplets } from './polygons-helpers';
 import { assertOK } from './assert-vec2-ok';
-import { Points, Weights } from './types';
-import { GaussianRngFn, unsafeGaussRng } from './rng';
+import { triplets } from './polygons-helpers';
+import { type GaussianRngFn, unsafeGaussRng } from './rng';
+import type { Points, Weights } from './types';
 
 interface WigglePolygonOptions {
   gaussRng?: GaussianRngFn;

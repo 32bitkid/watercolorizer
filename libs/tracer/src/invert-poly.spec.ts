@@ -1,5 +1,5 @@
-import type { Ring } from './ring';
 import { invertPoly } from './invert-poly';
+import type { Ring } from './ring';
 
 describe('invertPoly()', () => {
   it('invert pixels inside the ring', () => {

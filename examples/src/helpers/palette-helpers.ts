@@ -1,5 +1,9 @@
-import { fromHex, mix as mixRGB, sRGBTuple } from '@4bitlabs/color-space/srgb';
-import { Vec2 } from '@4bitlabs/vec2';
+import {
+  fromHex,
+  mix as mixRGB,
+  type sRGBTuple,
+} from '@4bitlabs/color-space/srgb';
+import type { Vec2 } from '@4bitlabs/vec2';
 
 import { gaussRng } from './gauss-rng.ts';
 

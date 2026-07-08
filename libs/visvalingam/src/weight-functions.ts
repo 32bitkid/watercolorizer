@@ -1,4 +1,4 @@
-import { Triplet } from './simplify';
+import type { Triplet } from './simplify';
 
 type PointTuple = [number, number];
 export const areaOfTuple = ([

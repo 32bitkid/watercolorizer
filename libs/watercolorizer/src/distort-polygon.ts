@@ -1,26 +1,26 @@
 import {
-  add as vecAdd,
   distanceBetween,
+  vec2,
+  add as vecAdd,
   lerp as vecLerp,
   normalize as vecNorm,
   rotate as vecRotate,
   scale as vecScale,
   sub as vecSub,
-  vec2,
 } from '@4bitlabs/vec2';
 
 import {
   convolution1D as conv1d,
   K_GAUSS_BLUR_3,
 } from '@watercolorizer/convolution';
-import { segments } from './polygons-helpers';
-import { GaussianRngFn, unsafeGaussRng } from './rng';
-import { lerp, clamp } from './maths';
-import { Points, PointsAndWeights, Weights } from './types';
-import { wigglePolygon } from './wiggle-polygon';
-import { zipper } from './zipper';
 import { assertOK } from './assert-vec2-ok';
-import { WindingOrder } from './winding-order';
+import { clamp, lerp } from './maths';
+import { segments } from './polygons-helpers';
+import { type GaussianRngFn, unsafeGaussRng } from './rng';
+import type { Points, PointsAndWeights, Weights } from './types';
+import { wigglePolygon } from './wiggle-polygon';
+import type { WindingOrder } from './winding-order';
+import { zipper } from './zipper';
 
 export interface DistortPolyOptions {
   blurWeightsOnDistort?: boolean;

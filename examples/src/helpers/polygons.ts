@@ -1,4 +1,4 @@
-import { Vec2 } from '@4bitlabs/vec2';
+import type { Vec2 } from '@4bitlabs/vec2';
 
 export function pathPoly(
   ctx: CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D,

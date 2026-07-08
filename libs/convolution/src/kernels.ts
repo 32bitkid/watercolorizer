@@ -1,5 +1,5 @@
-import { Kernel1D } from './convolution1d';
-import { Kernel2D } from './convolution2d';
+import type { Kernel1D } from './convolution1d';
+import type { Kernel2D } from './convolution2d';
 
 export const K_BOX_BLUR_3: Kernel1D = [Uint8Array.of(1, 1, 1), 3];
 export const K_GAUSS_BLUR_3: Kernel1D = [Uint8Array.of(1, 2, 1), 4];

@@ -7,7 +7,9 @@ export function pathPoly(
   ctx.beginPath();
   const [first, ...rest] = points;
   ctx.moveTo(...first);
-  rest.forEach(([x, y]) => ctx.lineTo(x, y));
+  rest.forEach(([x, y]) => {
+    ctx.lineTo(x, y);
+  });
   ctx.closePath();
 }
 

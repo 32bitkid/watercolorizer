@@ -3,7 +3,7 @@ import { trace } from './trace';
 
 describe('trace', () => {
   it('should trace a polygon with a hole in it', () => {
-    // prettier-ignore
+    // biome-ignore format: pre-formatted
     const data = Uint8ClampedArray.of(
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -35,7 +35,7 @@ describe('trace', () => {
   });
 
   it('should respect turnPolicy', () => {
-    // prettier-ignore
+    // biome-ignore format: pre-formatted
     const data = Uint8ClampedArray.of(
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
       0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00,

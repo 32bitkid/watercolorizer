@@ -10,7 +10,7 @@ export const K_GAUSS_BLUR_7: Kernel1D = [
 ];
 
 export const K_BOX_BLUR_3x3: Kernel2D = [
-  // prettier-ignore
+  // biome-ignore format: pre-formatted
   Uint8ClampedArray.of(
     1, 1, 1,
     1, 1, 1,
@@ -21,7 +21,7 @@ export const K_BOX_BLUR_3x3: Kernel2D = [
 ];
 
 export const K_GAUSS_BLUR_3x3: Kernel2D = [
-  // prettier-ignore
+  // biome-ignore format: pre-formatted
   Uint8ClampedArray.of(
     1, 2, 1,
     2, 4, 4,
@@ -32,7 +32,7 @@ export const K_GAUSS_BLUR_3x3: Kernel2D = [
 ];
 
 export const K_GAUSS_BLUR_5x5: Kernel2D = [
-  // prettier-ignore
+  // biome-ignore format: pre-formatted
   Uint8ClampedArray.of(
     1,  4,  6,  4, 1,
     4, 16, 24, 16, 4,
@@ -45,7 +45,7 @@ export const K_GAUSS_BLUR_5x5: Kernel2D = [
 ];
 
 export const K_GAUSS_BLUR_7x7: Kernel2D = [
-  // prettier-ignore
+  // biome-ignore format: pre-formatted
   Uint8ClampedArray.of(
     0,  0,  1,   2,  1,  0, 0,
     0,  3, 13,  22, 13,  3, 0,

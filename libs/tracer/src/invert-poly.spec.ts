@@ -3,7 +3,7 @@ import type { Ring } from './ring';
 
 describe('invertPoly()', () => {
   it('invert pixels inside the ring', () => {
-    // prettier-ignore
+    // biome-ignore format: pre-formatted
     const data = Uint8ClampedArray.of(
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -24,7 +24,7 @@ describe('invertPoly()', () => {
 
     invertPoly(data, [8, 8], ring);
     expect(data).toStrictEqual(
-      // prettier-ignore
+      // biome-ignore format: pre-formatted
       Uint8ClampedArray.of(
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -39,7 +39,7 @@ describe('invertPoly()', () => {
   });
 
   it('should invert off pixels', () => {
-    // prettier-ignore
+    // biome-ignore format: pre-formatted
     const data = Uint8ClampedArray.of(
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -60,7 +60,7 @@ describe('invertPoly()', () => {
 
     invertPoly(data, [8, 8], ring);
     expect(data).toStrictEqual(
-      // prettier-ignore
+      // biome-ignore format: pre-formatted
       Uint8ClampedArray.of(
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -75,7 +75,7 @@ describe('invertPoly()', () => {
   });
 
   it('should not invert pixels outside of the ring', () => {
-    // prettier-ignore
+    // biome-ignore format: pre-formatted
     const data = Uint8ClampedArray.of(
       0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0x00,
       0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff,
@@ -96,7 +96,7 @@ describe('invertPoly()', () => {
 
     invertPoly(data, [8, 8], ring);
     expect(data).toStrictEqual(
-      // prettier-ignore
+      // biome-ignore format: pre-formatted
       Uint8ClampedArray.of(
         0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0x00,
         0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff,

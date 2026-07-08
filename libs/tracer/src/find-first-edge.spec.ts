@@ -2,7 +2,7 @@ import { findFirstEdge } from './find-first-edge';
 
 describe('findFirstEdge()', () => {
   it('should find the top-most, left-most pixel change', () => {
-    // prettier-ignore
+    // biome-ignore format: pre-formatted
     const data = Uint8ClampedArray.of(
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -18,7 +18,7 @@ describe('findFirstEdge()', () => {
   });
 
   it('should find a pixel on the leading edge', () => {
-    // prettier-ignore
+    // biome-ignore format: pre-formatted
     const data = Uint8ClampedArray.of(
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -34,7 +34,7 @@ describe('findFirstEdge()', () => {
   });
 
   it('should find a pixel on the trailing edge', () => {
-    // prettier-ignore
+    // biome-ignore format: pre-formatted
     const data = Uint8ClampedArray.of(
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -50,7 +50,7 @@ describe('findFirstEdge()', () => {
   });
 
   it('should return null if there are no transitions anywhere', () => {
-    // prettier-ignore
+    // biome-ignore format: pre-formatted
     const data = Uint8ClampedArray.of(
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,

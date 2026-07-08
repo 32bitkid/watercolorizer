@@ -12,7 +12,7 @@ describe('windingOrderOf()', () => {
       [-1, 0],
       [-Math.SQRT1_2, Math.SQRT1_2],
     ];
-    expect(windingOrderOf(cwOctagon, true)).toBe('cw');
+    expect(windingOrderOf(cwOctagon)).toBe('cw');
   });
 
   it('should detect counter-clockwise winding', () => {
@@ -26,6 +26,6 @@ describe('windingOrderOf()', () => {
       [1, 0],
       [Math.SQRT1_2, Math.SQRT1_2],
     ];
-    expect(windingOrderOf(ccwOctagon, true)).toBe('ccw');
+    expect(windingOrderOf(ccwOctagon)).toBe('ccw');
   });
 });

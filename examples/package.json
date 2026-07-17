@@ -12,8 +12,8 @@
   "dependencies": {
     "@4bitlabs/color-space": "^2.0.0",
     "@4bitlabs/vec2": "^2.0.0",
-    "@watercolorizer/convolution": "^1.0.1",
-    "@watercolorizer/watercolorizer": "^1.0.0",
+    "@watercolorizer/convolution": "^2.0.0",
+    "@watercolorizer/watercolorizer": "^2.0.0",
     "transformation-matrix": "^2.16.1",
     "vue": "^3.4.33"
   },

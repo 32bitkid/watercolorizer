@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { windingOrderOf } from './winding-order';
 
 describe('windingOrderOf()', () => {

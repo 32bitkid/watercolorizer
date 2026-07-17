@@ -9,6 +9,22 @@
 
 An extremely simple, but efficient, method to create polygonal outlines of 1-bit bitmap images; where _zero_ is an "empty" pixel, and any _non-zero_ value is considered "filled".
 
+## Installation
+
+For node, install with npm:
+
+```
+npm i @watercolorizer/tracer
+```
+
+In browsers, import it from an ESM CDN:
+
+```html
+<script type="module">
+  import { trace } from 'https://unpkg.com/@watercolorizer/tracer/dist/index.js'
+</script>
+```
+
 ## Getting Started
 
 ```ts

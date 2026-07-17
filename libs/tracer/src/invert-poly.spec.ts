@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { invertPoly } from './invert-poly';
 import type { Ring } from './ring';
 

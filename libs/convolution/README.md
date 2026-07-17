@@ -11,6 +11,22 @@ Simple, unoptimized 1D and 2D convolution functions for typed-arrays.
 > in a particularly rigorous way. You probably _do not_ want to use this in production for anything, _ever_.
 > ⚠️ **Use at your own risk.** ⚠️
 
+## Installation
+
+For node, install with npm:
+
+```
+npm i @watercolorizer/convolution
+```
+
+In browsers, import it from an ESM CDN:
+
+```html
+<script type="module">
+  import { convolution1D } from 'https://unpkg.com/@watercolorizer/convolution/dist/index.js'
+</script>
+```
+
 ## Getting Started
 
 Perform a 3-unit gaussian-blur approximation on a one-dimensional array with edge wrapping:
@@ -21,7 +37,7 @@ import { convolution1D, K_GAUSS_BLUR_3 } from '@watercolorizer/convolution';
 const data = [1, 2, 3, 4, 5, 6, 7, 8];
 const output = [];
 
-convolution2D(K_GAUSS_BLUR_3, data, output);
+convolution1D(K_GAUSS_BLUR_3, data, output);
 
 console.log(output);
 /* [3, 2.5, 3.125, 4.03125, 5.0078125, 6.001953125, 7.00048828125, 6.5001220703125] */
@@ -35,7 +51,7 @@ import { convolution1D, K_GAUSS_BLUR_3 } from '@watercolorizer/convolution';
 const input = Uint8ClampedArray.of(1, 2, 3, 4, 5, 6, 7, 8);
 const output = new Uint8ClampedArray(8);
 
-convolution2D(K_GAUSS_BLUR_3, input, output);
+convolution1D(K_GAUSS_BLUR_3, input, output);
 
 console.log(output);
 /* [3, 2, 3, 4, 5, 6, 7, 6] */

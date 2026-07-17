@@ -7,7 +7,8 @@
     "polygon-tracer",
     "1bit"
   ],
-  "main": "./dist/index.js",
+  "type": "module",
+  "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "homepage": "https://github.com/32bitkid/watercolorizer/tree/main/libs/tracer#readme",
   "repository": {
@@ -21,10 +22,10 @@
     "./dist/**/*"
   ],
   "scripts": {
-    "clean": "tsc --build --clean",
     "clean:wipe": "rimraf ./dist",
-    "build": "tsc --build",
-    "test": "jest src/",
+    "build": "tsdown",
+    "test": "vitest run",
+    "test:dev": "vitest",
     "prepack": "npm run build"
   },
   "author": "J. Holmes <j@holmes.codes>",

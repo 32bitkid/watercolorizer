@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { simplify, type Triplet } from './simplify';
 import { areaOfTuple as areaOf } from './weight-functions';
 

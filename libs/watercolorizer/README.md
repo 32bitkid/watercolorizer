@@ -9,6 +9,22 @@
 
 **Watercolorizer** is a _tiny_ graphics library for creating generative watercolor-like shapes from simple polygonal base-shapes. This _core_ library is un-opinionated about the rendering process and instead focuses on the generative algorithm for constructing the paths to be rendered.
 
+## Installation
+
+For node, install with npm:
+
+```
+npm i @watercolorizer/watercolorizer
+```
+
+In browsers, import it from an ESM CDN:
+
+```html
+<script type="module">
+  import { watercolorize } from 'https://unpkg.com/@watercolorizer/watercolorizer/dist/index.js'
+</script>
+```
+
 ## Getting Started
 
 ```ts

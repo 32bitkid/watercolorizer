@@ -7,6 +7,22 @@
 
 [Visvalingam–Whyatt algorithm](https://en.wikipedia.org/wiki/Visvalingam%E2%80%93Whyatt_algorithm) for line simplification.
 
+## Installation
+
+For node, install with npm:
+
+```
+npm i @watercolorizer/visvalingam
+```
+
+In browsers, import it from an ESM CDN:
+
+```html
+<script type="module">
+  import { simplify } from 'https://unpkg.com/@watercolorizer/visvalingam/dist/index.js'
+</script>
+```
+
 ## Getting Started
 
 ```ts

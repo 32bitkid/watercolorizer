@@ -8,7 +8,7 @@
     "svg",
     "generative-art"
   ],
-  "main": "./dist/index.js",
+  "type": "module",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
@@ -17,7 +17,7 @@
   "homepage": "https://github.com/32bitkid/watercolorizer/tree/main/libs/watercolorizer#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/32bitkid/watercolorizer.git"
+    "url": "git+https://github.com/32bitkid/watercolorizer.git"
   },
   "bugs": {
     "url": "https://github.com/32bitkid/watercolorizer/issues?q=is%3Aopen+is%3Aissue+label%3A%watercolorizer%2Fwatercolorizer"
@@ -26,9 +26,10 @@
     "./dist/**/*"
   ],
   "scripts": {
-    "clean": "tsc --build --clean",
     "clean:wipe": "rimraf ./dist",
-    "build": "tsc --build",
+    "build": "tsdown",
+    "test": "vitest run",
+    "test:dev": "vitest",
     "prepack": "npm run build"
   },
   "author": "J. Holmes <j@holmes.codes>",

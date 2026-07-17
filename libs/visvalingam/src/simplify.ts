@@ -1,4 +1,4 @@
-import { pop, push, replace } from 'mnemonist/heap';
+import { MinHeap } from 'mnemonist';
 
 export type Triplet<T> = [T, T, T];
 
@@ -34,7 +34,7 @@ export function simplify<T extends object>(
   const countLimit = typeof limit === 'number' ? limit : 2;
   const limitFn = typeof limit === 'number' ? null : limit;
 
-  const heap: Entry<T>[] = [];
+  const heap = new MinHeap<Entry<T>>(weightCmp);
   const forward = new WeakMap<Entry<T>, Entry<T>>();
   const backward = new WeakMap<Entry<T>, Entry<T>>();
 
@@ -52,7 +52,7 @@ export function simplify<T extends object>(
         backward.set(entry, previous);
       }
       previous = entry;
-      push(weightCmp, heap, entry);
+      heap.push(entry);
     }
   }
 
@@ -60,7 +60,7 @@ export function simplify<T extends object>(
   let pointsLeft = initialCount - countLimit;
   const removed = new WeakSet<T>();
   while (pointsLeft > 0) {
-    const current = pop(weightCmp, heap);
+    const current = heap.pop();
     if (!current) throw new Error('unexpected heap exhaustion');
     if (current.dead) continue;
 
@@ -93,8 +93,8 @@ export function simplify<T extends object>(
         backward.set(newPrevious, prevPrev);
       }
 
-      if (heap[0].dead) replace(weightCmp, heap, newPrevious);
-      else push(weightCmp, heap, newPrevious);
+      if (heap.peek()?.dead) heap.replace(newPrevious);
+      else heap.push(newPrevious);
     }
 
     if (next) {
@@ -114,8 +114,8 @@ export function simplify<T extends object>(
         forward.set(newNext, nextNext);
       }
 
-      if (heap[0].dead) replace(weightCmp, heap, newNext);
-      else push(weightCmp, heap, newNext);
+      if (heap.peek()?.dead) heap.replace(newNext);
+      else heap.push(newNext);
     }
 
     if (newNext && newPrevious) {

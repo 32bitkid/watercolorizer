@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import type { Ring } from './ring';
 import { trace } from './trace';
 

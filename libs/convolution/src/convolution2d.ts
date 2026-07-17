@@ -1,4 +1,4 @@
-import type { TypedArray } from './typed-array';
+import type { TypedArray } from './typed-array.js';
 
 export type Kernel2D = [TypedArray, [number, number], number?];
 

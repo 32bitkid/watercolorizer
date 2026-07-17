@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import type { Direction } from './direction';
 import { polygonify } from './polygonify';
 import type { Ring } from './ring';

@@ -1,4 +1,5 @@
-import { convolution1D, type Kernel1D } from './convolution1d';
+import { describe, expect, it } from 'vitest';
+import { convolution1D, type Kernel1D } from './convolution1d.js';
 
 describe('1d convoultion', () => {
   describe('edge handling', () => {

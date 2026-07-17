@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/visvalingam@1.1.1...@watercolorizer/visvalingam@2.0.0) (2026-07-17)
+
+### ⚠ BREAKING CHANGES
+
+* Migrate build to pure ESM and TypeScript
+
+### Features
+
+* Migrate build to pure ESM and TypeScript
+
+
 ## [1.1.1](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/visvalingam@1.1.0...@watercolorizer/visvalingam@1.1.1) (2024-07-21)
 
 ### Chore

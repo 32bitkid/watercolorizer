@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@1.0.4...@watercolorizer/convolution@2.0.0) (2026-07-17)
+
+### ⚠ BREAKING CHANGES
+
+* Migrate build to pure ESM and TypeScript
+
+### Features
+
+* Migrate build to pure ESM and TypeScript
+
+
 ## [1.0.4](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@1.0.3...@watercolorizer/convolution@1.0.4) (2024-07-21)
 
 ### Chore

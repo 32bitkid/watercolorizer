@@ -1,7 +1,7 @@
 import { distanceBetween, project, type Vec2 } from '@4bitlabs/vec2';
 
-import type { Direction } from './direction';
-import type { Ring } from './ring';
+import type { Direction } from './direction.js';
+import type { Ring } from './ring.js';
 
 function distanceToLine(p: Vec2, q: Vec2, a: Vec2): number {
   const proj = project(p, q, a);

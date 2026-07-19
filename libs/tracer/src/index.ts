@@ -1,1 +1,1 @@
-export { trace } from './trace';
+export { trace } from './trace.js';

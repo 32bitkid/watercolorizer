@@ -15,7 +15,21 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "preset": "recommended"
+      "preset": "recommended",
+      "suspicious": {
+        "noDeprecatedImports": "error"
+      },
+      "correctness": {
+        "useImportExtensions": {
+          "level": "error",
+          "options": {
+            "extensionMappings": {
+              "ts": "js",
+              "tsx": "js"
+            }
+          }
+        }
+      }
     }
   },
   "javascript": {

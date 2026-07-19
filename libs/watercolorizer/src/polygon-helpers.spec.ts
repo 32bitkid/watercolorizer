@@ -1,7 +1,7 @@
 import type { Vec2 } from '@4bitlabs/vec2';
 import { describe, expect, it } from 'vitest';
 
-import { segments } from './polygons-helpers';
+import { segments } from './polygons-helpers.js';
 
 describe('segments', () => {
   it('should iterate all the way around a looped polygon', () => {

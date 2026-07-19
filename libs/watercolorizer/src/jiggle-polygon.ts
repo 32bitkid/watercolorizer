@@ -1,6 +1,6 @@
 import type { Vec2 } from '@4bitlabs/vec2';
 
-import { unsafeGaussRng } from './rng';
+import { unsafeGaussRng } from './rng.js';
 
 export const jigglePolygon = (points: Vec2[], sigma: number = 2 / 3) =>
   points.map<Vec2>(([x, y]) => [

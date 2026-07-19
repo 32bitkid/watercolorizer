@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { invertPoly } from './invert-poly';
-import type { Ring } from './ring';
+import { invertPoly } from './invert-poly.js';
+import type { Ring } from './ring.js';
 
 describe('invertPoly()', () => {
   it('invert pixels inside the ring', () => {

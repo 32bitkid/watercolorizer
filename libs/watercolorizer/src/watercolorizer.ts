@@ -1,11 +1,11 @@
 import type { Vec2 } from '@4bitlabs/vec2';
 
-import { type DistortPolyOptions, distortPolygon } from './distort-polygon';
-import { createGaussianRng, type RandomNumberGenerator } from './rng';
-import { simplify } from './simplify';
-import { simplifyWithWeights } from './simplify-with-weights';
-import type { PointsAndWeights } from './types';
-import { type WindingOrder, windingOrderOf } from './winding-order';
+import { type DistortPolyOptions, distortPolygon } from './distort-polygon.js';
+import { createGaussianRng, type RandomNumberGenerator } from './rng.js';
+import { simplify } from './simplify.js';
+import { simplifyWithWeights } from './simplify-with-weights.js';
+import type { PointsAndWeights } from './types.js';
+import { type WindingOrder, windingOrderOf } from './winding-order.js';
 
 const nReduce = <T>(
   length: number,

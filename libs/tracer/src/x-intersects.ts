@@ -1,6 +1,6 @@
 import type { Vec2 } from '@4bitlabs/vec2';
 
-import { getSegments } from './get-segments';
+import { getSegments } from './get-segments.js';
 
 export const xIntersects = (
   verts: Vec2[],

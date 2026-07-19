@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import type { Ring } from './ring';
-import { trace } from './trace';
+import type { Ring } from './ring.js';
+import { trace } from './trace.js';
 
 describe('trace', () => {
   it('should trace a polygon with a hole in it', () => {

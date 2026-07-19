@@ -4,11 +4,11 @@ import { watercolorize } from '@watercolorizer/watercolorizer';
 import * as M from 'transformation-matrix';
 import { onMounted, onUnmounted, ref } from 'vue';
 
-import { mustExist } from './helpers/exists.ts';
-import { gaussRng } from './helpers/gauss-rng.ts';
-import { colors, generateFillStyle } from './helpers/palette-helpers.ts';
-import { pathPoly } from './helpers/polygons.ts';
-import { randomWeights } from './helpers/random-weights.ts';
+import { mustExist } from './helpers/exists.js';
+import { gaussRng } from './helpers/gauss-rng.js';
+import { colors, generateFillStyle } from './helpers/palette-helpers.js';
+import { pathPoly } from './helpers/polygons.js';
+import { randomWeights } from './helpers/random-weights.js';
 
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 const cancelRef = ref<number>(0);

@@ -7,10 +7,10 @@ import {
   scale as vecScale,
   sub as vecSub,
 } from '@4bitlabs/vec2';
-import { assertOK } from './assert-vec2-ok';
-import { triplets } from './polygons-helpers';
-import { type GaussianRngFn, unsafeGaussRng } from './rng';
-import type { Points, Weights } from './types';
+import { assertOK } from './assert-vec2-ok.js';
+import { triplets } from './polygons-helpers.js';
+import { type GaussianRngFn, unsafeGaussRng } from './rng.js';
+import type { Points, Weights } from './types.js';
 
 interface WigglePolygonOptions {
   gaussRng?: GaussianRngFn;

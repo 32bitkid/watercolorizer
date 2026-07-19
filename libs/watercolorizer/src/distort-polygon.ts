@@ -13,14 +13,14 @@ import {
   convolution1D as conv1d,
   K_GAUSS_BLUR_3,
 } from '@watercolorizer/convolution';
-import { assertOK } from './assert-vec2-ok';
-import { clamp, lerp } from './maths';
-import { segments } from './polygons-helpers';
-import { type GaussianRngFn, unsafeGaussRng } from './rng';
-import type { Points, PointsAndWeights, Weights } from './types';
-import { wigglePolygon } from './wiggle-polygon';
-import type { WindingOrder } from './winding-order';
-import { zipper } from './zipper';
+import { assertOK } from './assert-vec2-ok.js';
+import { clamp, lerp } from './maths.js';
+import { segments } from './polygons-helpers.js';
+import { type GaussianRngFn, unsafeGaussRng } from './rng.js';
+import type { Points, PointsAndWeights, Weights } from './types.js';
+import { wigglePolygon } from './wiggle-polygon.js';
+import type { WindingOrder } from './winding-order.js';
+import { zipper } from './zipper.js';
 
 export interface DistortPolyOptions {
   blurWeightsOnDistort?: boolean;

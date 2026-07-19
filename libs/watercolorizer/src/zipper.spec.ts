@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { zipper } from './zipper';
+import { zipper } from './zipper.js';
 
 describe('zipper', () => {
   it('should zip together two arrays', () => {

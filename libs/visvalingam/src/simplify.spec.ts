@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { simplify, type Triplet } from './simplify';
-import { areaOfTuple as areaOf } from './weight-functions';
+import { simplify, type Triplet } from './simplify.js';
+import { areaOfTuple as areaOf } from './weight-functions.js';
 
 type PointTuple = [number, number];
 

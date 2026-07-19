@@ -1,7 +1,7 @@
 import type { Vec2 } from '@4bitlabs/vec2';
-import { getBounds } from './get-bounds';
-import type { Ring } from './ring';
-import { xIntersects } from './x-intersects';
+import { getBounds } from './get-bounds.js';
+import type { Ring } from './ring.js';
+import { xIntersects } from './x-intersects.js';
 
 export function invertPoly(data: Uint8ClampedArray, size: Vec2, ring: Ring) {
   const [width] = size;

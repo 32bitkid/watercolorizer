@@ -1,6 +1,6 @@
 import type { Vec2 } from '@4bitlabs/vec2';
 
-import { segments } from './polygons-helpers';
+import { segments } from './polygons-helpers.js';
 
 export type WindingOrder = 'cw' | 'ccw';
 

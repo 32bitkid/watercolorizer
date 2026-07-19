@@ -1,4 +1,4 @@
-export type { Triplet, WeightFn } from './simplify';
-export { simplify } from './simplify';
+export type { Triplet, WeightFn } from './simplify.js';
+export { simplify } from './simplify.js';
 
-export { areaOfObject, areaOfTuple } from './weight-functions';
+export { areaOfObject, areaOfTuple } from './weight-functions.js';

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { windingOrderOf } from './winding-order';
+import { windingOrderOf } from './winding-order.js';
 
 describe('windingOrderOf()', () => {
   it('should detect clockwise winding', () => {

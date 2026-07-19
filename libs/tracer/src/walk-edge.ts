@@ -2,12 +2,12 @@ import {
   add,
   clone,
   isEqual,
-  type Vec2,
   type MutableVec2,
+  type Vec2,
   vec2,
 } from '@4bitlabs/vec2';
-import { type Direction, DOWN, LEFT, RIGHT, UP } from './direction';
-import type { Ring } from './ring';
+import { type Direction, DOWN, LEFT, RIGHT, UP } from './direction.js';
+import type { Ring } from './ring.js';
 
 const directionVectors: { [key in Direction]: Vec2 } = {
   [UP]: vec2(0, -1),

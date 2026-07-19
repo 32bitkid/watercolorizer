@@ -1,9 +1,9 @@
 import type { Vec2 } from '@4bitlabs/vec2';
-import { findFirstEdge } from './find-first-edge';
-import { invertPoly } from './invert-poly';
-import { polygonify } from './polygonify';
-import type { Ring } from './ring';
-import { walkEdge } from './walk-edge';
+import { findFirstEdge } from './find-first-edge.js';
+import { invertPoly } from './invert-poly.js';
+import { polygonify } from './polygonify.js';
+import type { Ring } from './ring.js';
+import { walkEdge } from './walk-edge.js';
 
 interface TraceOptions {
   limit?: number;

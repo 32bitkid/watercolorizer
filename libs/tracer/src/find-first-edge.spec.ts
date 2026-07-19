@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { findFirstEdge } from './find-first-edge';
+import { findFirstEdge } from './find-first-edge.js';
 
 describe('findFirstEdge()', () => {
   it('should find the top-most, left-most pixel change', () => {

@@ -1,7 +1,7 @@
 import type { Vec2 } from '@4bitlabs/vec2';
 
-import { simplify } from './simplify';
-import type { PointsAndWeights } from './types';
+import { simplify } from './simplify.js';
+import type { PointsAndWeights } from './types.js';
 
 export const warnOnce = <T>(message: string, defaultVal: T) => {
   let warned = false;

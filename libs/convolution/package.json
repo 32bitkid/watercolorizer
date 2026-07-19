@@ -24,7 +24,7 @@
     "build": "tsdown",
     "test": "vitest run",
     "test:dev": "vitest",
-    "prepack": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "author": "J. Holmes <j@holmes.codes>",
   "license": "ISC"

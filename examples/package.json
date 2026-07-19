@@ -10,16 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@4bitlabs/color-space": "^2.0.0",
-    "@4bitlabs/vec2": "^2.0.0",
+    "@4bitlabs/color-space": "^3.0.0",
+    "@4bitlabs/vec2": "^3.0.0",
     "@watercolorizer/convolution": "^2.0.0",
     "@watercolorizer/watercolorizer": "^2.0.0",
-    "transformation-matrix": "^2.16.1",
-    "vue": "^3.4.33"
+    "transformation-matrix": "^3.1.0",
+    "vue": "^3.5.40"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.3.4",
-    "vue-tsc": "^2.0.26"
+    "@vitejs/plugin-vue": "^6.0.8",
+    "vite": "^8.1.5",
+    "vue-tsc": "^3.3.7"
   }
 }

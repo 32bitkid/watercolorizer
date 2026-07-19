@@ -31,6 +31,6 @@
   "author": "J. Holmes <j@holmes.codes>",
   "license": "ISC",
   "dependencies": {
-    "@4bitlabs/vec2": "^2.0.0"
+    "@4bitlabs/vec2": "^3.0.0"
   }
 }

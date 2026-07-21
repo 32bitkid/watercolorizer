@@ -1,6 +1,6 @@
 {
   "name": "@watercolorizer/watercolorizer",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Core watercolor polygon distortion library",
   "keywords": [
     "watercolor",
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@4bitlabs/vec2": "^3.0.0",
-    "@watercolorizer/convolution": "^2.0.1",
+    "@watercolorizer/convolution": "^2.0.2",
     "simplify-ts": "^1.0.2"
   }
 }

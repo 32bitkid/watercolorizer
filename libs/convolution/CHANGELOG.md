@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@2.0.1...@watercolorizer/convolution@2.0.2) (2026-07-21)
+
+### Bug Fixes
+
+* typo in 3x3 Gaussian blur kernel
+
+
 ## [2.0.1](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@2.0.0...@watercolorizer/convolution@2.0.1) (2026-07-19)
 
 **Note:** Version bump only for package @watercolorizer/convolution

@@ -24,7 +24,7 @@ export const K_GAUSS_BLUR_3x3: Kernel2D = [
   // biome-ignore format: pre-formatted
   Uint8ClampedArray.of(
     1, 2, 1,
-    2, 4, 4,
+    2, 4, 2,
     1, 2, 1,
   ),
   [3, 3],

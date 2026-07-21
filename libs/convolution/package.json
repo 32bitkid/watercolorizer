@@ -5,27 +5,27 @@
   "keywords": [
     "convolution"
   ],
-  "type": "module",
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "homepage": "https://github.com/32bitkid/watercolorizer/tree/main/libs/convolution#readme",
+  "bugs": {
+    "url": "https://github.com/32bitkid/watercolorizer/issues?q=is%3Aopen+is%3Aissue+label%3A%watercolorizer%2Fconvolution"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/32bitkid/watercolorizer.git"
   },
-  "bugs": {
-    "url": "https://github.com/32bitkid/watercolorizer/issues?q=is%3Aopen+is%3Aissue+label%3A%watercolorizer%2Fconvolution"
-  },
+  "license": "ISC",
+  "author": "J. Holmes <j@holmes.codes>",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "./dist/**/*"
   ],
   "scripts": {
-    "clean:wipe": "rimraf ./dist",
     "build": "tsdown",
+    "clean:wipe": "rimraf ./dist",
+    "prepublishOnly": "npm run build",
     "test": "vitest run",
-    "test:dev": "vitest",
-    "prepublishOnly": "npm run build"
-  },
-  "author": "J. Holmes <j@holmes.codes>",
-  "license": "ISC"
+    "test:dev": "vitest"
+  }
 }

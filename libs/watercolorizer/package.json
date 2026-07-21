@@ -8,32 +8,32 @@
     "svg",
     "generative-art"
   ],
-  "type": "module",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./distort-polygon": "./dist/distort-polygon.js"
-  },
   "homepage": "https://github.com/32bitkid/watercolorizer/tree/main/libs/watercolorizer#readme",
+  "bugs": {
+    "url": "https://github.com/32bitkid/watercolorizer/issues?q=is%3Aopen+is%3Aissue+label%3A%watercolorizer%2Fwatercolorizer"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/32bitkid/watercolorizer.git"
   },
-  "bugs": {
-    "url": "https://github.com/32bitkid/watercolorizer/issues?q=is%3Aopen+is%3Aissue+label%3A%watercolorizer%2Fwatercolorizer"
+  "license": "ISC",
+  "author": "J. Holmes <j@holmes.codes>",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./distort-polygon": "./dist/distort-polygon.js"
   },
+  "types": "./dist/index.d.ts",
   "files": [
     "./dist/**/*"
   ],
   "scripts": {
-    "clean:wipe": "rimraf ./dist",
     "build": "tsdown",
+    "clean:wipe": "rimraf ./dist",
+    "prepublishOnly": "npm run build",
     "test": "vitest run",
-    "test:dev": "vitest",
-    "prepublishOnly": "npm run build"
+    "test:dev": "vitest"
   },
-  "author": "J. Holmes <j@holmes.codes>",
-  "license": "ISC",
   "dependencies": {
     "@4bitlabs/vec2": "^3.0.0",
     "@watercolorizer/convolution": "^2.0.1",

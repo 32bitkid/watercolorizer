@@ -1,12 +1,12 @@
 {
   "name": "@watercolorizer/examples",
-  "description": "Usage examples for @watercolorizer/watercolorizer",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "Usage examples for @watercolorizer/watercolorizer",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vue-tsc && vite build",
+    "dev": "vite",
     "preview": "vite preview"
   },
   "dependencies": {

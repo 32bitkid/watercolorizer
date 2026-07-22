@@ -11,6 +11,7 @@ interface TraceOptions {
   polygonify?: boolean;
   despeckle?: number | false;
   turnPolicy?: 'cw' | 'ccw';
+  emptyValue?: number;
 }
 
 export function trace(
@@ -21,20 +22,24 @@ export function trace(
   const {
     limit = 16,
     despeckle = false,
-    turnPolicy,
+    turnPolicy: initialTurnPolicy = 'ccw',
     polygonify: toPoly = true,
     simplifyRuns = !toPoly,
+    emptyValue = 0,
   } = options;
 
   const rings: Ring[] = [];
   const pixels = Uint8ClampedArray.from(data);
   let iterations = 0;
+  let turnPolicy = initialTurnPolicy;
   do {
-    const start = findFirstEdge(pixels, size);
+    const start = findFirstEdge(pixels, size, emptyValue);
     if (!start) break;
+
     const [ring, bounds, steps] = walkEdge(pixels, size, start, {
       simplifyRuns,
       turnPolicy,
+      emptyValue,
     });
 
     if (despeckle === false || bounds[0] * bounds[1] > despeckle) {
@@ -43,6 +48,7 @@ export function trace(
       iterations++;
     }
     invertPoly(pixels, size, ring);
+    turnPolicy = turnPolicy === 'ccw' ? 'cw' : 'ccw';
   } while (iterations < limit);
 
   return rings;

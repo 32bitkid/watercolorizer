@@ -43,10 +43,7 @@ export function polygonify(ring$: Ring, steps: Direction[]) {
 
       for (let j = i + 1; j < k; j++) {
         const d = distanceToLine(iVec, kVec, ring[j]);
-        if (d < 0) {
-          console.log(' dist', d);
-        }
-        variance += d;
+        variance += Math.max(0, d);
         if (d > SQRT1_2) {
           isStraight = false;
           break;

@@ -19,6 +19,7 @@ const directionVectors: { [key in Direction]: Vec2 } = {
 export interface WalkEdgeOptions {
   simplifyRuns?: boolean;
   turnPolicy?: 'ccw' | 'cw';
+  emptyValue?: number;
 }
 
 export function walkEdge(
@@ -27,7 +28,11 @@ export function walkEdge(
   start: Vec2,
   options: WalkEdgeOptions = {},
 ): [ring: Ring, bounds: Vec2, steps: Direction[]] {
-  const { simplifyRuns = true, turnPolicy = 'ccw' } = options;
+  const {
+    simplifyRuns = true,
+    turnPolicy: turns = 'ccw',
+    emptyValue: empty,
+  } = options;
 
   const [width, height] = size;
   const result: Ring = [];
@@ -39,14 +44,16 @@ export function walkEdge(
     return oob ? 0 : data[x + y * width];
   };
 
-  const quad = {
-    tl: () => pixelAt(add([-1, -1], cur)),
-    tr: () => pixelAt(add([0, -1], cur)),
-    bl: () => pixelAt(add([-1, 0], cur)),
-    br: () => pixelAt(cur),
+  const isEmpty = {
+    tl: () => pixelAt(add([-1, -1], cur)) === empty,
+    tr: () => pixelAt(add([0, -1], cur)) === empty,
+    bl: () => pixelAt(add([-1, 0], cur)) === empty,
+    br: () => pixelAt(cur) === empty,
   };
 
-  let dir: Direction = DOWN;
+  const isCCW = turns === 'ccw';
+
+  let dir: Direction = isCCW ? DOWN : RIGHT;
   result.push(clone(start));
   steps.push(dir);
   add(directionVectors[dir], cur, cur);
@@ -55,46 +62,42 @@ export function walkEdge(
 
   while (!isEqual(start, cur)) {
     let nextDir: Direction = dir;
+
     switch (dir) {
       case DOWN: {
-        const left = quad.bl();
-        const right = quad.br();
-        if (left === 0 && right !== 0) nextDir = DOWN;
-        else if (left !== 0 && right !== 0) nextDir = LEFT;
-        else if (left === 0 && right === 0) nextDir = RIGHT;
-        else if (left !== 0 && right === 0)
-          nextDir = turnPolicy === 'ccw' ? RIGHT : LEFT;
+        const int = isCCW ? isEmpty.br() : isEmpty.bl();
+        const ext = isCCW ? isEmpty.bl() : isEmpty.br();
 
-        break;
-      }
-      case UP: {
-        const left = quad.tl();
-        const right = quad.tr();
-        if (left !== 0 && right === 0) nextDir = UP;
-        else if (left !== 0 && right !== 0) nextDir = RIGHT;
-        else if (left === 0 && right === 0) nextDir = LEFT;
-        else if (left === 0 && right !== 0)
-          nextDir = turnPolicy === 'ccw' ? LEFT : RIGHT;
-        break;
-      }
-      case LEFT: {
-        const top = quad.tl();
-        const bottom = quad.bl();
-        if (top === 0 && bottom !== 0) nextDir = LEFT;
-        else if (top !== 0 && bottom !== 0) nextDir = UP;
-        else if (top === 0 && bottom === 0) nextDir = DOWN;
-        else if (top !== 0 && bottom === 0)
-          nextDir = turnPolicy === 'ccw' ? DOWN : UP;
+        if (ext && !int) nextDir = DOWN;
+        else if (ext && int) nextDir = isCCW ? RIGHT : LEFT;
+        else nextDir = isCCW ? LEFT : RIGHT;
         break;
       }
       case RIGHT: {
-        const top = quad.tr();
-        const bottom = quad.br();
-        if (top !== 0 && bottom === 0) nextDir = RIGHT;
-        else if (top !== 0 && bottom !== 0) nextDir = DOWN;
-        else if (top === 0 && bottom === 0) nextDir = UP;
-        else if (top === 0 && bottom !== 0)
-          nextDir = turnPolicy === 'ccw' ? UP : DOWN;
+        const int = isCCW ? isEmpty.tr() : isEmpty.br();
+        const ext = isCCW ? isEmpty.br() : isEmpty.tr();
+
+        if (ext && !int) nextDir = RIGHT;
+        else if (ext && int) nextDir = isCCW ? UP : DOWN;
+        else nextDir = isCCW ? DOWN : UP;
+        break;
+      }
+      case UP: {
+        const int = isCCW ? isEmpty.tl() : isEmpty.tr();
+        const ext = isCCW ? isEmpty.tr() : isEmpty.tl();
+
+        if (ext && !int) nextDir = UP;
+        else if (ext && int) nextDir = isCCW ? LEFT : RIGHT;
+        else nextDir = isCCW ? RIGHT : LEFT;
+        break;
+      }
+      case LEFT: {
+        const int = isCCW ? isEmpty.bl() : isEmpty.tl();
+        const ext = isCCW ? isEmpty.tl() : isEmpty.bl();
+
+        if (ext && !int) nextDir = LEFT;
+        else if (ext && int) nextDir = isCCW ? DOWN : UP;
+        else nextDir = isCCW ? UP : DOWN;
         break;
       }
     }

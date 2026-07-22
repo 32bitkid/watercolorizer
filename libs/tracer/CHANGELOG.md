@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/tracer@2.0.2...@watercolorizer/tracer@3.0.0) (2026-07-22)
+
+### ⚠ BREAKING CHANGES
+
+* Alternate turn-policy/winding-order on nested polygons
+
+### Features
+
+* Alternate turn-policy/winding-order on nested polygons
+
+
 ## [2.0.2](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/tracer@2.0.1...@watercolorizer/tracer@2.0.2) (2026-07-21)
 
 **Note:** Version bump only for package @watercolorizer/tracer

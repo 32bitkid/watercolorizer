@@ -1,3 +1,4 @@
+import { type DitherOptions, getDitherFn } from './dither.js';
 import type { TypedArray } from './typed-array.js';
 
 export type Kernel1D = [TypedArray, number?];
@@ -17,8 +18,9 @@ const edgeHandlers: Record<
   },
 };
 
-interface ConvolutionOptions1D {
+export interface ConvolutionOptions1D {
   edge?: EdgeHandlingTypes;
+  dither?: DitherOptions;
 }
 
 export function convolution1D<T extends TypedArray>(
@@ -27,6 +29,8 @@ export function convolution1D<T extends TypedArray>(
   dest: T,
   options: ConvolutionOptions1D = {},
 ): T {
+  const ditherFn = getDitherFn(options?.dither ?? { type: 'none' });
+
   const [kernel, div = 1] = kern;
   const { edge = 'wrap' } = options;
 
@@ -43,7 +47,7 @@ export function convolution1D<T extends TypedArray>(
       const sIdx = limit(jn, sWidth);
       sum += source[sIdx] * kernel[n];
     }
-    dest[j] = sum / div;
+    dest[j] = ditherFn(j, 0, sum / div);
   }
   return dest;
 }

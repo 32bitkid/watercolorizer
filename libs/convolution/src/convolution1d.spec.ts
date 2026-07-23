@@ -34,5 +34,22 @@ describe('1d convoultion', () => {
       convolution1D(kern, data, result, { edge: 'mirror' });
       expect(result).toStrictEqual([1, 5 / 6, 4 / 6, 3 / 6, 2 / 6, 1 / 6]);
     });
+
+    it('should handle dither random dither', () => {
+      const kern: Kernel1D = [[1, 1, 1, 1, 1, 1], 6];
+      const data = [1, 1, 1, 0, 0, 0];
+      const result = new Uint8ClampedArray(6);
+      convolution1D(kern, data, result, {
+        edge: 'mirror',
+        dither: { type: 'random', rng: () => 0 },
+      });
+      expect(result).toStrictEqual(Uint8ClampedArray.of(1, 0, 0, 0, 0, 0));
+
+      convolution1D(kern, data, result, {
+        edge: 'mirror',
+        dither: { type: 'random', rng: () => 1 },
+      });
+      expect(result).toStrictEqual(Uint8ClampedArray.of(2, 1, 1, 1, 1, 1));
+    });
   });
 });

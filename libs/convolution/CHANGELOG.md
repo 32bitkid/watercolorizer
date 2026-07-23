@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@2.0.2...@watercolorizer/convolution@2.1.0) (2026-07-23)
+
+### Features
+
+* Add dithering option to convolution1D and convoultion2D
+
+
 ## [2.0.2](https://github.com/32bitkid/watercolorizer/compare/@watercolorizer/convolution@2.0.1...@watercolorizer/convolution@2.0.2) (2026-07-21)
 
 ### Bug Fixes
